@@ -1,0 +1,51 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>User Registration Form</h1>
+    <form (ngSubmit)="onSubmit()" #studentForm="ngForm">
+      <div class="form-group">
+        <label for="name">First Name</label>
+        <input type="text" class="form-control" id="firstName"
+               required
+               [(ngModel)]="student.firstName" name="firstName"
+               #name="ngModel">
+             </div><br>
+
+               <div class="form-group">
+               <label for="name">Last Name</label>
+        <input type="text" class="form-control" id="lastName"
+               required
+               [(ngModel)]="student.lastName" name="lastName"
+               #name="ngModel">
+             </div><br>
+
+             <div class="form-group">
+               <label for="name">Email</label>
+        <input type="text" class="form-control" id="email"
+               required
+               [(ngModel)]="student.email" name="email"
+               #name="ngModel">
+             </div><br>
+
+             <div class="form-group">
+               <label for="name">Company</label>
+        <input type="text" class="form-control" id="company"
+               required
+               [(ngModel)]="student.company" name="company"
+               #name="ngModel">
+              
+        
+
+
+     
+        
+        
+      </div><br>
+
+      <button type="submit" class="btn btn-success" [disabled]="!studentForm.form.valid">Register</button>
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <h2>Details submitted</h2>
+  </div>
+</div>
