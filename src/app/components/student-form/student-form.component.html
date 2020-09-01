@@ -1,47 +1,17 @@
 <div class="container">
   <div [hidden]="submitted">
-    <h1>User Registration Form</h1>
+    <h1 style="color:green">Application Creation Form</h1>
     <form (ngSubmit)="onSubmit()" #studentForm="ngForm">
       <div class="form-group">
-        <label for="name">First Name</label>
-        <input type="text" class="form-control" id="firstName"
+        <label for="appname">Application Name</label>
+        <input type="text" class="form-control" id="appname"
                required
-               [(ngModel)]="student.firstName" name="firstName"
+               [(ngModel)]="student.appname" name="appname"
                #name="ngModel">
              </div><br>
 
-               <div class="form-group">
-               <label for="name">Last Name</label>
-        <input type="text" class="form-control" id="lastName"
-               required
-               [(ngModel)]="student.lastName" name="lastName"
-               #name="ngModel">
-             </div><br>
-
-             <div class="form-group">
-               <label for="name">Email</label>
-        <input type="text" class="form-control" id="email"
-               required
-               [(ngModel)]="student.email" name="email"
-               #name="ngModel">
-             </div><br>
-
-             <div class="form-group">
-               <label for="name">Company</label>
-        <input type="text" class="form-control" id="company"
-               required
-               [(ngModel)]="student.company" name="company"
-               #name="ngModel">
-              
-        
-
-
-     
-        
-        
-      </div><br>
-
-      <button type="submit" class="btn btn-success" [disabled]="!studentForm.form.valid">Register</button>
+               
+      <button type="submit" class="btn btn-success" [disabled]="!studentForm.form.valid">Create</button>
     </form>
   </div>
 

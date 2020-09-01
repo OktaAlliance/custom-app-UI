@@ -10,18 +10,16 @@ import { HttpClient } from '@angular/common/http';
 export class StudentFormComponent implements OnInit {
 
   submitted = false;
-  student = new Student();
-
   constructor(private http: HttpClient){
 
   }
 
-  onSubmit() { 
+  onSubmit(appname) { 
     this.submitted = true; 
     console.log(this.student);
-    this.http.post('http://localhost:3000/okta/createUser' , this.student)
+    this.http.get('http://localhost:3000/okta/checkApp?q=' + appname')
     .subscribe(
-      (res: Student) => {console.log(res.firstName);}
+      (res: appname) => {console.log(res.appname);}
     );
   }
 
